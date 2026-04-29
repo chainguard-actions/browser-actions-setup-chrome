@@ -1,6 +1,12 @@
 # browser-actions/setup-chrome
 
-Hardened GitHub Action by [Chainguard](https://www.chainguard.dev).
+Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/browser-actions/setup-chrome](https://github.com/browser-actions/setup-chrome).
+
+## Versions
+
+| Version | Tag | Upstream commit |
+|---------|-----|-----------------|
+| v2.1.1 | [`v2.1.1`](https://github.com/chainguard-actions/setup-chrome/tree/v2.1.1) | — |
 
 ## Privacy
 

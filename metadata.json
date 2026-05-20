@@ -1,7 +1,0 @@
-{
-  "owner": "browser-actions",
-  "name": "setup-chrome",
-  "visibility": "internal",
-  "description": "Set up your GitHub Actions workflow with a specific version of chromium ",
-  "block_publish": false
-}

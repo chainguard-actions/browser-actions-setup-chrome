@@ -1,6 +1,6 @@
 # browser-actions/setup-chrome
 
-Set up your GitHub Actions workflow with a specific version of chromium 
+Install and setup Google Chrome and Chromium
 
 Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/browser-actions/setup-chrome](https://github.com/browser-actions/setup-chrome).
 

@@ -28834,7 +28834,6 @@ const fs = __importStar(__nccwpck_require__(7561));
 const os = __importStar(__nccwpck_require__(612));
 const path = __importStar(__nccwpck_require__(9411));
 const core = __importStar(__nccwpck_require__(9093));
-const io = __importStar(__nccwpck_require__(2826));
 const version_1 = __nccwpck_require__(9750);
 function cacheDir(sourceDir_1, tool_1, version_2) {
     return __awaiter(this, arguments, void 0, function* (sourceDir, tool, version, arch = os.arch()) {
@@ -28846,8 +28845,9 @@ function cacheDir(sourceDir_1, tool_1, version_2) {
         const destPath = yield _createToolPath(tool, version, arch);
         for (const itemName of yield fs.promises.readdir(sourceDir)) {
             const s = path.join(sourceDir, itemName);
-            yield io.cp(s, destPath, { recursive: true, force: true });
-            core.debug(`cacheDir: copied ${s} to ${destPath}`);
+            const d = path.join(destPath, itemName);
+            yield fs.promises.cp(s, d, { recursive: true });
+            core.debug(`cacheDir: copied ${s} to ${d}`);
         }
         _completeToolPath(tool, version, arch);
         return destPath;

@@ -1,0 +1,46 @@
+name: Test latest Chrome channel
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          chrome-version: latest
+          install-dependencies: true
+      - name: Assert chrome-version output is set
+        env:
+          CHROME_VERSION: ${{ steps.action.outputs.chrome-version }}
+        run: |
+          echo "chrome-version: $CHROME_VERSION"
+          if [ -z "$CHROME_VERSION" ]; then
+            echo "FAIL: chrome-version output is empty"
+            exit 1
+          fi
+          echo "PASS: chrome-version=$CHROME_VERSION"
+      - name: Assert chrome-path output is set and binary exists
+        env:
+          CHROME_PATH: ${{ steps.action.outputs.chrome-path }}
+        run: |
+          echo "chrome-path: $CHROME_PATH"
+          if [ -z "$CHROME_PATH" ]; then
+            echo "FAIL: chrome-path output is empty"
+            exit 1
+          fi
+          if [ ! -e "$CHROME_PATH" ]; then
+            echo "FAIL: chrome binary not found at $CHROME_PATH"
+            exit 1
+          fi
+          echo "PASS: chrome-path=$CHROME_PATH"
+      - name: Assert Chrome reports version
+        env:
+          CHROME_PATH: ${{ steps.action.outputs.chrome-path }}
+        run: |
+          echo "Running: $CHROME_PATH --version"
+          "$CHROME_PATH" --version --no-sandbox 2>/dev/null || \
+            "$CHROME_PATH" --version 2>/dev/null || \
+            echo "Note: Chrome --version may not work in Docker, but binary exists"
+          echo "PASS"

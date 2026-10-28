@@ -6,10 +6,10 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 ## Versions
 
-| Version | Tag | Upstream commit |
-|---------|-----|-----------------|
-| v2.1.1 | [`v2.1.1`](https://github.com/chainguard-actions/browser-actions-setup-chrome/tree/v2.1.1) | [`4f8e943`](https://github.com/browser-actions/setup-chrome/commit/4f8e94349a351df0f048634f25fec36c3c91eded) |
-| v2.1.2 | [`v2.1.2`](https://github.com/chainguard-actions/browser-actions-setup-chrome/tree/v2.1.2) | [`2e1d749`](https://github.com/browser-actions/setup-chrome/commit/2e1d749697dd1612b833dba4a722266286fbefcd) |
+| Version | Tag | Upstream commit | Hardening report |
+|---------|-----|-----------------|------------------|
+| v2.1.1 | [`v2.1.1`](https://github.com/chainguard-actions/browser-actions-setup-chrome/tree/v2.1.1) | [`4f8e943`](https://github.com/browser-actions/setup-chrome/commit/4f8e94349a351df0f048634f25fec36c3c91eded) | [`HARDENING.md`](https://github.com/chainguard-actions/browser-actions-setup-chrome/blob/v2.1.1/HARDENING.md) |
+| v2.1.2 | [`v2.1.2`](https://github.com/chainguard-actions/browser-actions-setup-chrome/tree/v2.1.2) | [`2e1d749`](https://github.com/browser-actions/setup-chrome/commit/2e1d749697dd1612b833dba4a722266286fbefcd) | [`HARDENING.md`](https://github.com/chainguard-actions/browser-actions-setup-chrome/blob/v2.1.2/HARDENING.md) |
 
 ## Privacy
 
